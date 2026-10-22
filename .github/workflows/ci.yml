@@ -34,6 +34,8 @@ jobs:
       # 4. Instala los navegadores de Playwright
       - name: Instalar navegadores de Playwright
         run: npx playwright install --with-deps
+        env:
+          DEBIAN_FRONTEND: noninteractive
 
       # 5. Ejecuta las pruebas automaticas
       - name: Ejecutar tests de Playwright
