@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('la página muestra el título', async ({ page }) => {
-  await expect(page.getByRole('heading', { name: 'Películas de terror' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Cartelera de cine' })).toBeVisible();
 });
 
 test('hay un botón para iniciar sesión', async ({ page }) => {
