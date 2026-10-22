@@ -1,4 +1,3 @@
-
 # CI – Equipo 11
 name: CI
 
@@ -31,9 +30,9 @@ jobs:
       - name: Instalar dependencias
         run: npm ci
 
-      # 4. Instala los navegadores de Playwright
-      - name: Instalar navegadores de Playwright
-        run: npx playwright install --with-deps
+      # 4. Instala solo Chromium y sus dependencias
+      - name: Instalar Chromium para Playwright
+        run: npx playwright install --with-deps chromium
         env:
           DEBIAN_FRONTEND: noninteractive
 
@@ -41,10 +40,11 @@ jobs:
       - name: Ejecutar tests de Playwright
         run: npx playwright test
 
+      # 6. Genera el informe de cobertura
       - name: Generar informe de cobertura
         run: npm run test:coverage
 
-      # 6. Analiza el codigo con SonarCloud
+      # 7. Analiza el codigo con SonarCloud
       - name: Analizar codigo con SonarCloud
         uses: SonarSource/sonarqube-scan-action@d209202bc7d53ff1cc128f7f907dac145c9d6ae9
         env:
@@ -53,7 +53,7 @@ jobs:
           args: >
             -Dsonar.qualitygate.wait=true
 
-      # 7. Guarda el reporte de Playwright
+      # 8. Guarda el reporte de Playwright
       - name: Subir reporte como artifact
         if: always()
         uses: actions/upload-artifact@v4
