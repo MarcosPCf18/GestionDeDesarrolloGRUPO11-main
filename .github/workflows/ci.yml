@@ -39,6 +39,9 @@ jobs:
       - name: Ejecutar tests de Playwright
         run: npx playwright test
 
+      - name: Generar informe de cobertura
+        run: npm run test:coverage
+
       # 6. Analiza el codigo con SonarCloud
       - name: Analizar codigo con SonarCloud
         uses: SonarSource/sonarqube-scan-action@d209202bc7d53ff1cc128f7f907dac145c9d6ae9

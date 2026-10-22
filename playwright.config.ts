@@ -2,6 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   testDir: './tests',
+  testMatch: '**/*.spec.ts',
   // Falla si quedó un test.only olvidado (solo en CI)
   forbidOnly: !!process.env.CI,
   retries: 0,

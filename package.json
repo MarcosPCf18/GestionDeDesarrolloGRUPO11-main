@@ -4,11 +4,15 @@
   "private": true,
   "scripts": {
     "start": "http-server public -p 4200 -s",
-    "test": "playwright test"
+    "test": "playwright test",
+    "test:coverage": "vitest run app.test.js --coverage.enabled --coverage.provider=v8 --coverage.reporter=text --coverage.reporter=lcov --coverage.include=public/app.js"
   },
   "devDependencies": {
     "@playwright/test": "^1.49.0",
     "@types/node": "^26.6.5",
-    "http-server": "^14.1.1"
+    "@vitest/coverage-v8": "^5.0.5",
+    "http-server": "^14.1.1",
+    "jsdom": "^30.1.3",
+    "vitest": "^5.0.5"
   }
 }
