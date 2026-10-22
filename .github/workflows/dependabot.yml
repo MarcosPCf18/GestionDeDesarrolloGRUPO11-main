@@ -1,0 +1,14 @@
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+
+#version: 2: indica la versión de configuración de Dependabot.
+#package-ecosystem: "npm": revisa las dependencias de Node.js/npm.
+#directory: "/": busca package.json en la raíz del repositorio.
+#interval: "weekly": comprueba actualizaciones una vez por semana.
+#open-pull-requests-limit: 10: permite hasta diez Pull Requests de actualización abiertas a la vez.
