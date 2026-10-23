@@ -14,4 +14,12 @@ if (typeof document !== 'undefined') {
   document.addEventListener('DOMContentLoaded', configurarInicioSesion);
 }
 
-eval("console.log('Prueba de seguridad')");
+export function pruebaCobertura() {
+  const numero = 10;
+
+  if (numero > 5) {
+    return 'mayor';
+  }
+
+  return 'menor';
+}
