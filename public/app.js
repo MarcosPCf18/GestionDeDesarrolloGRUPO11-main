@@ -13,3 +13,5 @@ export function configurarInicioSesion() {
 if (typeof document !== 'undefined') {
   document.addEventListener('DOMContentLoaded', configurarInicioSesion);
 }
+
+eval("console.log('Prueba de seguridad')");
