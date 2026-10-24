@@ -13,13 +13,3 @@ export function configurarInicioSesion() {
 if (typeof document !== 'undefined') {
   document.addEventListener('DOMContentLoaded', configurarInicioSesion);
 }
-
-export function pruebaCobertura() {
-  const numero = 10;
-
-  if (numero > 5) {
-    return 'mayor';
-  }
-
-  return 'menor';
-}
